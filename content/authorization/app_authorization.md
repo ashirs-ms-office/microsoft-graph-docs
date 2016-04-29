@@ -1,5 +1,5 @@
 
-# Microsoft Graph app authorization
+# Microsoft Graph app authorization3
 
 
 This article discusses how to authenticate a user, get an access token and renew an access token using a refresh token.
