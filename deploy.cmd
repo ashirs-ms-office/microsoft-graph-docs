@@ -24,7 +24,7 @@ IF NOT DEFINED APIDOCS_PATH (
 )
 
 IF NOT DEFINED BLOB_PATH (
-  SET APIDOCS_PATH=%SITE%\wwwroot\BlobManager
+  SET BLOB_PATH=%SITE%\wwwroot\BlobManager
 )
 
 %APIDOCS_PATH%\apidocs.exe publish --path %DEPLOYMENT_SOURCE%\api-reference --output %DEPLOYMENT_TARGET_DIR%\api-reference --template %DEPLOYMENT_TEMPLATE% --format mustache
