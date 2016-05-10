@@ -23,6 +23,10 @@ IF NOT DEFINED APIDOCS_PATH (
   SET APIDOCS_PATH=%SITE%\wwwroot\MD\apidocs
 )
 
+IF NOT DEFINED BLOB_PATH (
+  SET APIDOCS_PATH=%SITE%\wwwroot\BlobManager
+)
+
 %APIDOCS_PATH%\apidocs.exe publish --path %DEPLOYMENT_SOURCE%\api-reference --output %DEPLOYMENT_TARGET_DIR%\api-reference --template %DEPLOYMENT_TEMPLATE% --format mustache
 
 %APIDOCS_PATH%\apidocs.exe publish --path %DEPLOYMENT_SOURCE%\content\authorization --output %DEPLOYMENT_TARGET_DIR%\authorization --template %DEPLOYMENT_TEMPLATE% --format mustache
@@ -31,3 +35,4 @@ IF NOT DEFINED APIDOCS_PATH (
 
 %APIDOCS_PATH%\apidocs.exe publish --path %DEPLOYMENT_SOURCE%\content\walkthroughs --output %DEPLOYMENT_TARGET_DIR%\platform --template %DEPLOYMENT_TEMPLATE% --format mustache
 
+%BLOB_PATH%\blobmanager.exe %DEPLOYMENT_TARGET_DIR%\api-reference\overview msgraph/docs
